@@ -12,3 +12,10 @@ To build the project, run `gulp`.
 To clean the project run `gulp clean`.
 
 To run the http-server that will server built content, run `gulp connect`.
+
+
+## Inspiration
+[This](http://archive.wizards.com/dnd/files/PHB_v35_charsheet.zip) character
+sheet is really cool; but unfortunately much of the formulas just aren't quite that
+friendly. The goal of this project is to make a character sheet that handles the
+formulas for you.
