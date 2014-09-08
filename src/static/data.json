@@ -1,35 +1,111 @@
-{ "charName": "Character Name",
-  "playerName": "Player Name",
-  "class": "Jedi Knight",
-  "level": 1,
-  "race": "Jar Jar",
-  "abilities" : [
-    { "name": "strength",
-      "score": 5,
-      "modifier": -3 },
-    { "name": "dexterity",
-      "score": 5,
-      "modifier": -3 },
-    { "name": "constitution",
-      "score": 5,
-      "modifier": -3 },
-    { "name": "intelligence",
-      "score": 5,
-      "modifier": -3 },
-    { "name": "wisdom",
-      "score": 5,
-      "modifier": -3 },
-    { "name": "charisma",
-      "score": 5,
-      "modifier": -3 }],
-  "size": "M",
-  "age": 20,
-  "gender": "F",
-  "weight": 200,
-  "height": "6'",
-  "hair": "none",
-  "skin": "flappy",
-  "alignment": "neutral-dumb",
-  "diety": "dumb",
-  "eyes": "yes"
+{
+    "charName": "Character Name",
+    "playerName": "Player Name",
+    "class": "Jedi Knight",
+    "level": 1,
+    "race": "Jar Jar",
+    "abilities": [
+        {
+            "name": "strength",
+            "score": 10,
+            "modifier": 0
+        },
+        {
+            "name": "dexterity",
+            "score": 10,
+            "modifier": 0
+        },
+        {
+            "name": "constitution",
+            "score": 10,
+            "modifier": 0
+        },
+        {
+            "name": "intelligence",
+            "score": 10,
+            "modifier": 0
+        },
+        {
+            "name": "wisdom",
+            "score": 10,
+            "modifier": 0
+        },
+        {
+            "name": "charisma",
+            "score": 10,
+            "modifier": 0
+        }
+    ],
+    "saves": [
+        {
+            "name": "fortitude",
+            "ability": "constitution",
+            "total": 2,
+            "base": 1,
+            "modifiers": [
+                {
+                    "type": "magic",
+                    "modifier": 1
+                },
+                {
+                    "type": "misc",
+                    "modifier": 0
+                },
+                {
+                    "type": "temporary",
+                    "modifier": 0
+                }
+            ]
+        },
+        {
+            "name": "reflex",
+            "ability": "dexterity",
+            "total": 1,
+            "base": 1,
+            "modifiers": [
+                {
+                    "type": "magic",
+                    "modifier": 0
+                },
+                {
+                    "type": "misc",
+                    "modifier": 0
+                },
+                {
+                    "type": "temporary",
+                    "modifier": 0
+                }
+            ]
+        },
+        {
+            "name": "will",
+            "ability": "wisdom",
+            "total": 1,
+            "base": 1,
+            "modifiers": [
+                {
+                    "type": "magic",
+                    "modifier": 0
+                },
+                {
+                    "type": "misc",
+                    "modifier": 0
+                },
+                {
+                    "type": "temporary",
+                    "modifier": 0
+                }
+            ]
+        }
+    ],
+    "size": "M",
+    "age": 20,
+    "gender": "F",
+    "weight": 200,
+    "height": "6'",
+    "hair": "none",
+    "skin": "flappy",
+    "alignment": "neutral-dumb",
+    "diety": "dumb",
+    "eyes": "yes"
 }

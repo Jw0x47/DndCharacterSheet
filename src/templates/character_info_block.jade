@@ -1,5 +1,6 @@
 div.row
-  div.container.col-md-12
+  // no padding because the inner cols will provide double padding and then it looks like ass
+  div.container.col-md-12(style="padding-left: 0px; padding-right: 0px;")
     div.characterInfoBlock
       div.col-sm-6
         label(for="charName") Character Name

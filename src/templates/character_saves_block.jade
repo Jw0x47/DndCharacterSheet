@@ -1,0 +1,27 @@
+div.container.col-md-8
+  div.saves
+    table.table
+      thead
+        td
+          label Save
+        td
+          label Total
+        td
+          label Base
+        td
+          label Ability Mod
+        td
+            label Misc Mod
+      tbody
+        tr.noPadding(ng-repeat="save in char.saves track by save.name")
+          // td Save
+          td
+            label {{ save.name }}
+          // td Total
+          td {{ save.total }}
+          // td Base Save
+          td {{ save.base }}
+          // td Ability Modifier
+          td(id="save.ability") {{ getAbilityModifier(save.ability) }}
+          // composite modifiers
+          td {{ getSaveCompositeModifier(save.modifiers) }}

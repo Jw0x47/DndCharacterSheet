@@ -14,4 +14,6 @@ html(lang="en", ng-app="dndCharacterSheets", ng-controller="CharSheet")
       div.row
         div.center-col
           include templates/character_info_block.jade
-          include templates/character_stats_block.jade
+          div.row
+            include templates/character_stats_block.jade
+            include templates/character_saves_block.jade
