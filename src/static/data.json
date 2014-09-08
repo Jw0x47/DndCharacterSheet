@@ -38,14 +38,14 @@
     ],
     "saves": [
         {
-            "name": "Fortitude",
+            "name": "fortitude",
             "ability": "constitution",
-            "total": 1,
+            "total": 2,
             "base": 1,
             "modifiers": [
                 {
                     "type": "magic",
-                    "modifier": 0
+                    "modifier": 1
                 },
                 {
                     "type": "misc",
@@ -58,7 +58,7 @@
             ]
         },
         {
-            "name": "Reflex",
+            "name": "reflex",
             "ability": "dexterity",
             "total": 1,
             "base": 1,
@@ -78,7 +78,7 @@
             ]
         },
         {
-            "name": "Will",
+            "name": "will",
             "ability": "wisdom",
             "total": 1,
             "base": 1,
