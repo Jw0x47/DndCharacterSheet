@@ -25,7 +25,7 @@ dndSheetsApp.controller 'CharSheet', ($scope, $http) ->
             , 0  ## coffee WHY
 
   $scope.savesTotalUpdate = () ->
-    $scope.char.saves = $scope.char.saves.map (save) ->
+    $scope?.char?.saves = $scope?.char?.saves.map (save) ->
       name: save.name
       ability: save.ability
       base: save.base
