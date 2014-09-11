@@ -1,5 +1,5 @@
-div.container.col-md-8
-  div.saves
+div.characterSavesBlock
+  div.col-sm-6.panel
     table.table
       thead
         td
@@ -11,7 +11,7 @@ div.container.col-md-8
         td
           label Ability Mod
         td
-            label Misc Mod
+          label Misc Mod
       tbody
         tr.noPadding(ng-repeat="save in char.saves track by save.name")
           // td Save
@@ -25,3 +25,4 @@ div.container.col-md-8
           td(id="save.ability") {{ getAbilityModifier(save.ability) }}
           // composite modifiers
           td {{ getSaveCompositeModifier(save.modifiers) }}
+    button.btn.btn-sm.btn-warning Edit

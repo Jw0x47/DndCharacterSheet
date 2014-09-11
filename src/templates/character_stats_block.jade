@@ -1,17 +1,19 @@
-div.container.col-md-4
-  div.abilityList
-    table.table
-      thead
-        td
-          label stat
-        td
-          label value
-        td
-          label modifier
-      tbody
-        tr.noPadding(ng-repeat="ability in char.abilities track by ability.name")
+div.characterStatsBlock
+  div.col-sm-5.panel
+    div.abilityList
+      table.table
+        thead
           td
-            label {{ ability.name }}
+            label stat
           td
-            input(id="ability.name" ng-model="ability.score" ng-change="abilityScoreUpdate()")
-          td {{ ability.modifier }}
+            label value
+          td
+            label modifier
+        tbody
+          tr.noPadding(ng-repeat="ability in char.abilities track by ability.name")
+            td
+              label {{ ability.name }}
+            td
+              input(id="ability.name" style="width:50px" ng-model="ability.score" ng-change="abilityScoreUpdate()")
+            td {{ ability.modifier }}
+    button.btn.btn-sm.btn-warning Edit

@@ -1,9 +1,4 @@
 {
-    "charName": "Character Name",
-    "playerName": "Player Name",
-    "class": "Jedi Knight",
-    "level": 1,
-    "race": "Jar Jar",
     "abilities": [
         {
             "name": "strength",
@@ -98,14 +93,21 @@
             ]
         }
     ],
-    "size": "M",
-    "age": 20,
-    "gender": "F",
-    "weight": 200,
-    "height": "6'",
-    "hair": "none",
-    "skin": "flappy",
-    "alignment": "neutral-dumb",
-    "diety": "dumb",
-    "eyes": "yes"
+    "characterFacts": {
+        "charName": "Character Name",
+        "playerName": "Player Name",
+        "class": "Jedi Knight",
+        "level": 1,
+        "race": "Jar Jar",
+        "size": "M",
+        "age": 20,
+        "gender": "F",
+        "weight": 200,
+        "height": "6'",
+        "hair": "none",
+        "skin": "flappy",
+        "alignment": "neutral-dumb",
+        "diety": "dumb",
+        "eyes": "yes"
+    }
 }
