@@ -1,51 +1,58 @@
-div.row
-  // no padding because the inner cols will provide double padding and then it looks like ass
-  div.container.col-md-12(style="padding-left: 0px; padding-right: 0px;")
-    div.characterInfoBlock
-      div.col-sm-6
-        label(for="charName") Character Name
-        input#charName(value="{{ char.charName }}")
-      div.col-sm-6
-        label(for="playerName") Player Name
-        input#playerName(value="{{ char.playerName }}")
-      // row 1
-      div.col-sm-3
-        label(for="charClass") Class
-        input#charClass(value="{{ char.class }}")
-      div.col-sm-2
-        label(for="charLevel") Level
-        input#charLevel(value="{{ char.level }}")
-      div.col-sm-2
-        label(for="charRace") Race
-        input#charRace(value="{{ char.race }}")
-      div.col-sm-2
-        label(for="charAlignment") Alignment
-        input#charAlignment(value="{{ char.alignment }}")
-      div.col-sm-3
-        label(for="charDiety") Diety
-        input#charDiety(value="{{ char.diety }}")
-      // row2
-      div.col-sm-1
-         label(for="charSize") Size
-         input#charSize(value="{{ char.size }}")
-      div.col-sm-1
-         label(for="charAge") Age
-         input#charAge(value="{{ char.age }}")
-      div.col-sm-1
-         label(for="charGender") Gender
-         input#charGender(value="{{ char.gender }}")
-      div.col-sm-2
-         label(for="charHeight") Height
-         input#charHeight(value="{{ char.height }}")
-      div.col-sm-1
-         label(for="charWeight") Weight
-         input#charWeight(value="{{ char.weight }}")
-      div.col-sm-2
-         label(for="charEyes") Eyes
-         input#charEyes(value="{{ char.eyes }}")
-      div.col-sm-2
-         label(for="charHair") Hair
-         input#charHair(value="{{ char.hair }}")
-      div.col-sm-2
-         label(for="charSkin") Skin
-         input#charSkin(value="{{ char.skin }}")
+div.characterNameBlock
+  div.col-sm-3.panel
+    label Character Name
+    div {{ char.characterFacts.charName }}
+    label Player Name
+    div {{ char.characterFacts.playerName }}
+    button.btn.btn-sm.btn-warning Edit
+// Should wrap this into a loop over char.characterFacts; too lazy right now
+// This needs to be more responsive on 'mobile / thin windows'
+// row 1
+// order:
+// 3 2 2 3 2
+div.characterInfoBlock.col-sm-9.panel
+  div.col-sm-3
+    label Class
+    div {{ char.characterFacts.class }}
+  div.col-sm-2
+    label Level
+    div {{ char.characterFacts.level }}
+  div.col-sm-2
+    label Race
+    div {{ char.characterFacts.race }}
+  div.col-sm-3
+    label Alignment
+    div {{ char.characterFacts.alignment }}
+  div.col-sm-2
+    label Size
+    div {{ char.characterFacts.size }}
+  // row2
+  // 3 2 2 3 2
+  div.col-sm-3
+    label Diety
+    div {{ char.characterFacts.diety }}
+  div.col-sm-2
+    label Age
+    div {{ char.characterFacts.age }}
+  div.col-sm-2
+    label Gender
+    div {{ char.characterFacts.gender }}
+  div.col-sm-3
+    label Height
+    div {{ char.characterFacts.height }}
+  div.col-sm-2
+    label Weight
+    div {{ char.characterFacts.weight }}
+  // row 3
+  // 3 2 2 3 2
+  div.col-sm-3
+    label Eyes
+    div {{ char.characterFacts.eyes }}
+  div.col-sm-2
+    label Hair
+    div {{ char.characterFacts.hair }}
+  div.col-sm-2
+    label Skin
+    div {{ char.characterFacts.skin }}
+  div.col-sm-3
+    button.btn.btn-sm.btn-warning Edit

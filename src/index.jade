@@ -13,7 +13,10 @@ html(lang="en", ng-app="dndCharacterSheets", ng-controller="CharSheet")
     div.container-fluid
       div.row
         div.center-col
-          include templates/character_info_block.jade
           div.row
-            include templates/character_stats_block.jade
-            include templates/character_saves_block.jade
+            div.container.col-sm-12(style="padding-left: 0px; padding-right: 0px;")
+              include templates/character_info_block.jade
+          div.row
+            div.container.col-sm-12(style="padding-left: 0px; padding-right: 0px;")
+              include templates/character_stats_block.jade
+              include templates/character_saves_block.jade
