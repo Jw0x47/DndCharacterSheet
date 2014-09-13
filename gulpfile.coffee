@@ -40,6 +40,6 @@ gulp.task 'vendor', ->
 gulp.task 'connect', -> connect.server root: 'dist'
 
 gulp.task 'watch', ->
-  gulp.watch ['./src/*'], ['default']
+  gulp.watch ['./src/**'], ['default']
 
 gulp.task 'default', ['styles', 'js', 'html', 'static', 'vendor']
