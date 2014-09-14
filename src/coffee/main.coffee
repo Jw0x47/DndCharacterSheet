@@ -44,6 +44,12 @@ dndSheetsApp.controller 'CharSheet', ($scope, $http) ->
 
   $scope.cancel = () -> # ... nothing special yet
 
+  $scope.updateCharacterFacts = () ->
+    # ... TODO ... anything?
+  $scope.updateCharacterNames = () ->
+    # ... TODO ... anything?
+  $scope.updateSaves = () ->
+    # ... TODO
   $scope.updateStats = () ->
     $scope.abilityScoreUpdate()
     $scope.savesTotalUpdate()

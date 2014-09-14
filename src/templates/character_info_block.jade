@@ -1,58 +1,24 @@
-div.characterNameBlock
-  div.col-sm-3.panel
-    label Character Name
-    div {{ char.characterFacts.charName }}
-    label Player Name
-    div {{ char.characterFacts.playerName }}
-    button.btn.btn-sm.btn-warning Edit
-// Should wrap this into a loop over char.characterFacts; too lazy right now
-// This needs to be more responsive on 'mobile / thin windows'
-// row 1
-// order:
-// 3 2 2 3 2
-div.characterInfoBlock.col-sm-9.panel
-  div.col-sm-3
-    label Class
-    div {{ char.characterFacts.class }}
-  div.col-sm-2
-    label Level
-    div {{ char.characterFacts.level }}
-  div.col-sm-2
-    label Race
-    div {{ char.characterFacts.race }}
-  div.col-sm-3
-    label Alignment
-    div {{ char.characterFacts.alignment }}
-  div.col-sm-2
-    label Size
-    div {{ char.characterFacts.size }}
-  // row2
-  // 3 2 2 3 2
-  div.col-sm-3
-    label Diety
-    div {{ char.characterFacts.diety }}
-  div.col-sm-2
-    label Age
-    div {{ char.characterFacts.age }}
-  div.col-sm-2
-    label Gender
-    div {{ char.characterFacts.gender }}
-  div.col-sm-3
-    label Height
-    div {{ char.characterFacts.height }}
-  div.col-sm-2
-    label Weight
-    div {{ char.characterFacts.weight }}
-  // row 3
-  // 3 2 2 3 2
-  div.col-sm-3
-    label Eyes
-    div {{ char.characterFacts.eyes }}
-  div.col-sm-2
-    label Hair
-    div {{ char.characterFacts.hair }}
-  div.col-sm-2
-    label Skin
-    div {{ char.characterFacts.skin }}
-  div.col-sm-3
-    button.btn.btn-sm.btn-warning Edit
+div#characterNameBlock
+  div.col-sm-3.Panel
+    h3 Names
+    form(editable-form name="characterNameForm" onaftersave="updateCharacterNames()" oncancel="cancel()")
+      label Character
+      div
+        span(editable-text="char.charName" e-name="characterName") {{ char.charName }}
+      label Player
+      div
+        span(editable-text="char.playerName" e-name="playerName") {{ char.playerName }}
+      - var formName = 'characterNameForm'
+      include ./edit_button_block.jade
+
+div#characterFactsBlock
+  div.col-md-9.Panel
+    h3 Role Play Facts
+    form(editable-form name="characterFactsForm" onaftersave="updateCharacterFacts()" oncancel="cancel()")
+      div.col-md-3(ng-repeat="fact in char.characterFacts")
+        label(style="display: inline") {{ fact.name }}
+        div(style="display: inline")
+          span.pull-right(editable-text="fact.value" e-name="value") {{ fact.value }}
+      - var formName = 'characterFactsForm'
+      - var formWidth = 'col-md-12'
+      include ./edit_button_block.jade
