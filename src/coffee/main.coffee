@@ -7,10 +7,6 @@ dndSheetsApp.controller 'CharSheet', ($scope, $http) ->
   $http.get("/static/data.json").success (data) ->
     $scope.char = data
 
-  $scope.updateSheet = () ->
-    abilityScoreUpdate()
-    savesTotalUpdate()
-
   $scope.abilityScoreUpdate = () ->
     $scope.char.abilities = $scope.char.abilities.map (ability) ->
       name: ability.name
@@ -44,4 +40,10 @@ dndSheetsApp.controller 'CharSheet', ($scope, $http) ->
   # this causes an error where it errors on load but then works
   # " TypeError: Cannot read property 'saves' of undefined "
   $scope.$watch "char.abilities", (newVal, oldVal) ->
+    $scope.savesTotalUpdate()
+
+  $scope.cancel = () -> # ... nothing special yet
+
+  $scope.updateStats = () ->
+    $scope.abilityScoreUpdate()
     $scope.savesTotalUpdate()

@@ -1,7 +1,7 @@
 div.characterStatsBlock
   div.col-sm-5.panel
     div.abilityList
-      form(editable-form, name="characterStatsForm", onaftersave="updateSheet()")
+      form(editable-form, name="characterStatsForm", onaftersave="updateStats()", oncancel="cancel()")
         table.table
           thead
             td
@@ -11,20 +11,16 @@ div.characterStatsBlock
             td
               label modifier
           tbody
-            tr.noPadding(ng-repeat="ability in char.abilities track by ability.name")
+            tr.noPadding(ng-repeat="ability in char.abilities")
               td
-                label
-                  span(editable-text="ability.name", e-form="tableform") {{ ability.name || 'empty' }}
+                label {{ ability.name || 'empty' }}
               td
-                span(editable-text="ability.score", e-name="score", onbeforesave="fun()", e-required) {{ ability.score || 'empty' }}
+                span(editable-text="ability.score", e-form="characterStatsForm", e-name="score") {{ ability.score || 'empty' }}
               td {{ ability.modifier }}
-              td
-                button(type="button" ng-show="tableform.$visible" ng-click="deleteUser(user.id)" class="btn btn-danger pull-right") Del
-
-
           div(class="btn-edit")
-            button(type="button", class="btn btn-default", ng-show="!tableform.$visible", ng-click="tableform.$show()") edit
-          div(class="btn-form" ng-show="tableform.$visible")
-            button(type="button", ng-disabled="tableform.$waiting", ng-click="addUser()", class="btn btn-default pull-right") add row
-            button(type="submit", ng-disabled="tableform.$waiting", class="btn btn-primary") save
-            button(type="button", ng-disabled="tableform.$waiting", ng-click="tableform.$cancel()", class="btn btn-default") cancel
+            button(type="button", class="btn btn-default", ng-show="!characterStatsForm.$visible", ng-click="characterStatsForm.$show()") edit
+          div(class="btn-form" ng-show="characterStatsForm.$visible")
+            // keeping for reference for next block
+            // button(type="button", ng-disabled="characterStatsForm.$waiting", ng-click="addUser()", class="btn btn-default pull-right") add row
+            button(type="submit", ng-disabled="characterStatsForm.$waiting", class="btn btn-primary") done
+            button(type="button", ng-disabled="characterStatsForm.$waiting", ng-click="characterStatsForm.$cancel()", class="btn btn-default") cancel
