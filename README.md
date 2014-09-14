@@ -11,7 +11,7 @@ To build the project, run `gulp`.
 
 To clean the project run `gulp clean`.
 
-To run the http-server that will server built content, run `gulp connect`.
+To run the http-server that will server built content, run `gulp watch connect`.
 
 
 ## Inspiration
