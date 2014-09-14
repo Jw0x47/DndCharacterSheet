@@ -1,0 +1,10 @@
+// Form width is an optional col-XX-Y that can help force the edit buttons to the bottom left of the panel
+div.btn-edit(class="#{formWidth}")
+  button(type="button", class="btn btn-default", ng-show="!#{formName}.$visible", ng-click="#{formName}.$show()") edit
+  div(class="btn-form" ng-show="#{formName}.$visible")
+    // keeping for reference for next block
+    // button(type="button", ng-disabled="#{formName}.$waiting", ng-click="addUser()", class="btn btn-default pull-right") add row
+    button(type="submit", ng-disabled="#{formName}.$waiting", class="btn btn-primary") done
+    button(type="button", ng-disabled="#{formName}.$waiting", ng-click="#{formName}.$cancel()", class="btn btn-default") cancel
+
+

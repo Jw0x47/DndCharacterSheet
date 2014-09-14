@@ -1,19 +1,22 @@
 div.characterStatsBlock
-  div.col-sm-5.panel
+  div.col-sm-5.Panel
+    h3 Stats
     div.abilityList
-      table.table
-        thead
-          td
-            label stat
-          td
-            label value
-          td
-            label modifier
-        tbody
-          tr.noPadding(ng-repeat="ability in char.abilities track by ability.name")
+      form(editable-form, name="characterStatsForm", onaftersave="updateStats()", oncancel="cancel()")
+        table.table.table-condensed
+          thead
             td
-              label {{ ability.name }}
+              h4 Stat
             td
-              input(id="ability.name" style="width:50px" ng-model="ability.score" ng-change="abilityScoreUpdate()")
-            td {{ ability.modifier }}
-    button.btn.btn-sm.btn-warning Edit
+              h4 Value
+            td
+              h4 Modifier
+          tbody
+            tr.noPadding(ng-repeat="ability in char.abilities")
+              td
+                label {{ ability.name || 'empty' }}
+              td
+                span(editable-text="ability.score", e-form="characterStatsForm", e-name="score") {{ ability.score || 'empty' }}
+              td {{ ability.modifier }}
+        - var formName = 'characterStatsForm'
+        include ./edit_button_block.jade

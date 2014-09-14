@@ -3,7 +3,8 @@
   "dependencies" : {
     "jade" : "latest",
     "coffee-script" : "1.8.0",
-    "sass" : "latest"
+    "sass" : "latest",
+    "angular-xeditable" : "latest"
   },
   "devDependencies": {
     "gulp": "3.8.7",

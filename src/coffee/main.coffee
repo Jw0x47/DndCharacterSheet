@@ -1,4 +1,7 @@
-dndSheetsApp = angular.module 'dndCharacterSheets', []
+dndSheetsApp = angular.module 'dndCharacterSheets', ["xeditable"]
+
+dndSheetsApp.run (editableOptions) ->
+  editableOptions.theme = "bs3"
 
 dndSheetsApp.controller 'CharSheet', ($scope, $http) ->
   $http.get("/static/data.json").success (data) ->
@@ -37,4 +40,16 @@ dndSheetsApp.controller 'CharSheet', ($scope, $http) ->
   # this causes an error where it errors on load but then works
   # " TypeError: Cannot read property 'saves' of undefined "
   $scope.$watch "char.abilities", (newVal, oldVal) ->
+    $scope.savesTotalUpdate()
+
+  $scope.cancel = () -> # ... nothing special yet
+
+  $scope.updateCharacterFacts = () ->
+    # ... TODO ... anything?
+  $scope.updateCharacterNames = () ->
+    # ... TODO ... anything?
+  $scope.updateSaves = () ->
+    # ... TODO
+  $scope.updateStats = () ->
+    $scope.abilityScoreUpdate()
     $scope.savesTotalUpdate()
