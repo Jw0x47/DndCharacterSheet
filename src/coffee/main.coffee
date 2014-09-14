@@ -1,8 +1,15 @@
-dndSheetsApp = angular.module 'dndCharacterSheets', []
+dndSheetsApp = angular.module 'dndCharacterSheets', ["xeditable"]
+
+dndSheetsApp.run (editableOptions) ->
+  editableOptions.theme = "bs3"
 
 dndSheetsApp.controller 'CharSheet', ($scope, $http) ->
   $http.get("/static/data.json").success (data) ->
     $scope.char = data
+
+  $scope.updateSheet = () ->
+    abilityScoreUpdate()
+    savesTotalUpdate()
 
   $scope.abilityScoreUpdate = () ->
     $scope.char.abilities = $scope.char.abilities.map (ability) ->
