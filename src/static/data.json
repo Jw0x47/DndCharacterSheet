@@ -2,40 +2,33 @@
     "abilities": [
         {
             "name": "strength",
-            "score": 10,
-            "modifier": 0
+            "score": 10
         },
         {
             "name": "dexterity",
-            "score": 10,
-            "modifier": 0
+            "score": 10
         },
         {
             "name": "constitution",
-            "score": 10,
-            "modifier": 0
+            "score": 10
         },
         {
             "name": "intelligence",
-            "score": 10,
-            "modifier": 0
+            "score": 10
         },
         {
             "name": "wisdom",
-            "score": 10,
-            "modifier": 0
+            "score": 10
         },
         {
             "name": "charisma",
-            "score": 10,
-            "modifier": 0
+            "score": 10
         }
     ],
     "saves": [
         {
             "name": "fortitude",
             "ability": "constitution",
-            "total": 2,
             "base": 1,
             "modifiers": [
                 {
@@ -55,7 +48,6 @@
         {
             "name": "reflex",
             "ability": "dexterity",
-            "total": 1,
             "base": 1,
             "modifiers": [
                 {
@@ -75,7 +67,6 @@
         {
             "name": "will",
             "ability": "wisdom",
-            "total": 1,
             "base": 1,
             "modifiers": [
                 {
