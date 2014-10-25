@@ -2,7 +2,7 @@ div.characterStatsBlock
   div.col-sm-5.Panel
     h3 Stats
     div.abilityList
-      form(editable-form, name="characterStatsForm", ng-controller="ModifierController")
+      form(editable-form, name="characterStatsForm", ng-controller="ModifierController as modifier")
         table.table.table-condensed
           thead
             td
@@ -17,6 +17,6 @@ div.characterStatsBlock
                 label {{ ability.name || 'empty' }}
               td
                 span(editable-text="ability.score", e-form="characterStatsForm", e-name="score") {{ ability.score || 'empty' }}
-              td {{ abilityModifier(ability.score) }}
+              td {{ modifier.abilityModifier(ability.score) }}
         - var formName = 'characterStatsForm'
         include ./edit_button_block.jade
