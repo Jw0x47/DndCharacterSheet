@@ -1,14 +1,14 @@
 div.characterSavesBlock
   div.col-sm-6.Panel
     h3 Saves
-    form(editable-form name="characterSavesForm" onaftersave="updateSaves()" oncancel="cancel()")
-      div.col-sm-4(ng-repeat="save in char.saves")
+    form(editable-form name="characterSavesForm", ng-controller="SaveController as abilitySave")
+      div.col-sm-4(ng-repeat="save in character.saves")
         // TODO: Fix styling
         div
           label(style="display: inline")
             // inline here so that we can do the pull-right and line up the numbers
             h4(style="color: black; margin-top: 10px") {{ save.name }}
-              span.pull-right {{ save.total }}
+              span.pull-right {{ abilitySave.totalSave(save) }}
         div
           label Base Save
           span.pull-right(editable-text="save.base" e-name="base") {{ save.base }}
@@ -16,7 +16,7 @@ div.characterSavesBlock
           label Ability Modifier
           // (style="margin-left: 10px;" editable-text="save.ability" e-name="abilityMod")
 
-          span.pull-right(style="margin-left: 10px;" editable-text="save.ability" e-name="abilityMod") {{ getAbilityModifier(save.ability) }}
+          span.pull-right(style="margin-left: 10px;" editable-text="save.ability" e-name="abilityMod") {{ abilitySave.abilityModifier(abilitySave.getAbility(save)) }}
         div
           div(ng-repeat="mod in save.modifiers")
             label {{ mod.type }}

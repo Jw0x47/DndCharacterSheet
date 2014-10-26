@@ -1,21 +1,21 @@
 div#characterNameBlock
   div.col-sm-3.Panel
     h3 Names
-    form(editable-form name="characterNameForm" onaftersave="updateCharacterNames()" oncancel="cancel()")
+    form(editable-form name="characterNameForm")
       label Character
       div
-        span(editable-text="char.charName" e-name="characterName") {{ char.charName }}
+        span(editable-text="character.charName" e-name="characterName") {{ character.charName }}
       label Player
       div
-        span(editable-text="char.playerName" e-name="playerName") {{ char.playerName }}
+        span(editable-text="character.playerName" e-name="playerName") {{ character.playerName }}
       - var formName = 'characterNameForm'
       include ./edit_button_block.jade
 
 div#characterFactsBlock
   div.col-md-9.Panel
     h3 Role Play Facts
-    form(editable-form name="characterFactsForm" onaftersave="updateCharacterFacts()" oncancel="cancel()")
-      div.col-md-3(ng-repeat="fact in char.characterFacts")
+    form(editable-form name="characterFactsForm")
+      div.col-md-3(ng-repeat="fact in character.characterFacts")
         label(style="display: inline") {{ fact.name }}
         div(style="display: inline")
           span.pull-right(editable-text="fact.value" e-name="value") {{ fact.value }}

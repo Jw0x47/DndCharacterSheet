@@ -1,10 +1,11 @@
 gulp = require 'gulp'
 gutil = require 'gulp-util'
-connect = require('gulp-connect')
+connect = require 'gulp-connect'
 clean = require 'gulp-clean'
 sass = require 'gulp-sass'
 jade = require 'gulp-jade'
 coffee = require 'gulp-coffee'
+concat = require 'gulp-concat'
 
 sassOptions =
   sourceComments: 'normal'
@@ -25,8 +26,11 @@ gulp.task 'styles', ->
     .pipe connect.reload()
 
 gulp.task 'js', ->
-  gulp.src './src/coffee/*.coffee'
+  gulp.src ['./src/coffee/services/**/*.coffee',
+            './src/coffee/controllers/**/*.coffee',
+            './src/coffee/main.coffee']
     .pipe coffee(bare: true).on('error', gutil.log)
+    .pipe concat('app.js')
     .pipe gulp.dest('./dist/js')
     .pipe connect.reload()
 
