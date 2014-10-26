@@ -10,6 +10,10 @@ sassOptions =
   sourceComments: 'normal'
   errLogToConsole: true
 
+connectOptions =
+  root: 'dist'
+  livereload: true
+
 gulp.task 'clean', ->
   gulp.src 'dist', read: false
     .pipe clean(force: true)
@@ -18,11 +22,13 @@ gulp.task 'styles', ->
   gulp.src './src/sass/*.sass'
     .pipe sass(sassOptions)
     .pipe gulp.dest('./dist/css')
+    .pipe connect.reload()
 
 gulp.task 'js', ->
   gulp.src './src/coffee/*.coffee'
     .pipe coffee(bare: true).on('error', gutil.log)
     .pipe gulp.dest('./dist/js')
+    .pipe connect.reload()
 
 gulp.task 'html', ->
   gulp.src './src/index.jade'
@@ -32,12 +38,13 @@ gulp.task 'html', ->
 gulp.task 'static', ->
   gulp.src './src/static/*'
     .pipe gulp.dest('./dist/static')
+    .pipe connect.reload()
 
 gulp.task 'vendor', ->
   gulp.src './third-party/*'
     .pipe gulp.dest('./dist/third-party')
 
-gulp.task 'connect', -> connect.server root: 'dist'
+gulp.task 'connect', -> connect.server connectOptions
 
 gulp.task 'watch', ->
   gulp.watch ['./src/**'], ['default']
